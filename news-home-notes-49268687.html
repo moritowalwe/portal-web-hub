@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 简明指南与访问提醒</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: #fafafa;
+      color: #1e1e1e;
+      line-height: 1.6;
+      padding: 0 1.2rem;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 0 5rem;
+    }
+
+    /* hero */
+    .hero {
+      margin-bottom: 3.5rem;
+      border-bottom: 1px solid #e5e5e5;
+      padding-bottom: 2.2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.7rem;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #4a4a4a;
+      max-width: 600px;
+      margin-top: 0.4rem;
+    }
+
+    .hero .badge {
+      display: inline-block;
+      background: #eaeaea;
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      color: #3a3a3a;
+      margin-top: 1rem;
+      letter-spacing: 0.3px;
+    }
+
+    /* 优势区 */
+    .strengths {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem 2rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .strength-item {
+      border-top: 2px solid #d9d9d9;
+      padding-top: 1rem;
+    }
+
+    .strength-item h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    .strength-item p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* 说明区 */
+    .explain {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      margin-bottom: 3rem;
+    }
+
+    .explain h2 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .explain p {
+      margin-bottom: 1rem;
+      font-size: 0.98rem;
+    }
+
+    .explain ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 1.2rem;
+    }
+
+    .explain ul li {
+      padding: 0.35rem 0 0.35rem 1.4rem;
+      position: relative;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    .explain ul li::before {
+      content: "·";
+      position: absolute;
+      left: 0.2rem;
+      color: #888;
+      font-weight: bold;
+    }
+
+    .highlight-link {
+      color: #1e1e1e;
+      text-decoration: none;
+      border-bottom: 1px solid #aaa;
+      padding-bottom: 1px;
+      transition: border-color 0.2s, color 0.2s;
+      font-weight: 450;
+    }
+
+    .highlight-link:hover {
+      border-bottom-color: #1e1e1e;
+      color: #000;
+    }
+
+    /* FAQ 摘要 */
+    .faq-section {
+      margin-bottom: 3rem;
+    }
+
+    .faq-section h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.01em;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #ececec;
+      padding: 1rem 0;
+    }
+
+    .faq-item:first-of-type {
+      border-top: 1px solid #ececec;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      font-size: 0.98rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .faq-a {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .faq-a a {
+      color: #1e1e1e;
+      text-decoration: none;
+      border-bottom: 1px solid #bbb;
+    }
+
+    .faq-a a:hover {
+      border-bottom-color: #1e1e1e;
+    }
+
+    /* 底部链接 */
+    .footer-links {
+      border-top: 1px solid #e5e5e5;
+      padding-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 2rem;
+      font-size: 0.85rem;
+      color: #777;
+    }
+
+    .footer-links a {
+      color: #555;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .footer-links a:hover {
+      border-bottom-color: #999;
+    }
+
+    .footer-links .main-link {
+      font-weight: 500;
+      color: #1e1e1e;
+    }
+
+    .footer-note {
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      color: #9a9a9a;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .strengths {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .explain {
+        padding: 1.5rem;
+      }
+
+      .container {
+        padding: 2rem 0 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- hero -->
+    <div class="hero">
+      <h1>爱游戏 · 简明指南</h1>
+      <p>信息聚合、社区动态、游戏资讯 —— 从单一入口开始。阅读前了解结构，能帮你更快定位感兴趣的内容。</p>
+      <span class="badge">访问提醒 · 2025</span>
+    </div>
+
+    <!-- 优势区 -->
+    <div class="strengths">
+      <div class="strength-item">
+        <h3>信息结构清晰</h3>
+        <p>分类导航与搜索结合，减少信息过载。首页仅展示核心板块，深层内容通过标签或目录展开。</p>
+      </div>
+      <div class="strength-item">
+        <h3>更新节奏稳定</h3>
+        <p>每日聚合多条资讯，周末另有深度专题。适合习惯定期浏览而非频繁刷新的用户。</p>
+      </div>
+      <div class="strength-item">
+        <h3>交互轻量</h3>
+        <p>页面加载优先文本，图片采用懒加载。不强制注册即可浏览大部分内容。</p>
+      </div>
+      <div class="strength-item">
+        <h3>社区氛围</h3>
+        <p>评论区采用排序与折叠机制，鼓励理性讨论。用户可标记有用信息，减少无效噪声。</p>
+      </div>
+    </div>
+
+    <!-- 说明区 -->
+    <div class="explain">
+      <h2>访问前须知</h2>
+      <p><a href="https://news-home-igame.com" class="highlight-link">爱游戏</a> 是一个以游戏资讯和社区内容为主的站点，风格偏简洁，没有自动播放视频或弹窗。以下几条说明可以帮助你更快上手：</p>
+      <ul>
+        <li>首页按「热门」「最新」「推荐」三个维度展示摘要，点击标题进入详情页。</li>
+        <li>搜索框位于页面右上角，支持关键词模糊匹配，不区分大小写。</li>
+        <li>部分历史文章需要滚动至底部「归档」区域查看，未设置分页限制。</li>
+        <li>移动端布局适配良好，横竖屏均能保持可读性。</li>
+      </ul>
+      <p style="margin-bottom:0;">如果你经常查找特定游戏或话题，建议使用浏览器书签保存频道页，能节省重复导航的时间。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-section">
+      <h2>常见疑问摘要</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">是否需要注册才能阅读？</div>
+        <div class="faq-a">不需要。所有文章和社区讨论均可直接查看。注册仅用于发布评论或收藏内容。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">如何联系网站维护方？</div>
+        <div class="faq-a">页面底部有「联系」链接，也可通过社交媒体账号私信。通常 1-2 个工作日内回复。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">内容版权如何标注？</div>
+        <div class="faq-a">原创文章标注作者，转载内容会注明来源。详情参见页面底部的版权说明。</div>
+      </div>
+
+      <div class="faq-item" style="border-bottom: none; padding-bottom: 0;">
+        <div class="faq-q">使用 <a href="https://news-home-igame.com" style="font-weight:500; border-bottom:1px solid #bbb;">爱游戏</a> 时遇到加载异常怎么办？</div>
+        <div class="faq-a">先尝试刷新页面或切换网络。若持续异常，可通过「反馈」通道提交截图与描述。</div>
+      </div>
+    </div>
+
+    <!-- 底部链接 -->
+    <div class="footer-links">
+      <a href="#" class="main-link">关于</a>
+      <a href="#">隐私</a>
+      <a href="#">联系</a>
+      <a href="#">版权说明</a>
+      <a href="#">RSS 订阅</a>
+      <span style="color:#bbb; margin-left:auto;">资讯 · 社区 · 爱游戏</span>
+    </div>
+    <div class="footer-note">
+      本页仅为介绍说明，所有操作请以实际网站为准。建议定期清理浏览器缓存以保持最佳体验。
+    </div>
+  </div>
+</body>
+</html>
